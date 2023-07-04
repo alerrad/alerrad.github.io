@@ -4,7 +4,7 @@ import blogLink from "../assets/img/blogLink.svg";
 
 function BlogCard(props) {
   return (
-    <Link to={`/blog/${props.id}`}>
+    <Link to={`/zhansen/blog/${props.id}`}>
       <div className="mini-post">
         <div
           className="preview"

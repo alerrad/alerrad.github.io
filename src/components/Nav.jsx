@@ -9,12 +9,12 @@ export default function Nav() {
   const [navURL, setNavURL] = useState("");
 
   useEffect(() => {
-    if (location === "/") {
+    if (location === "/zhansen/") {
       setNavLink("Blog");
-      setNavURL("/blog");
+      setNavURL("/zhansen/blog");
     } else {
       setNavLink("Home");
-      setNavURL("/");
+      setNavURL("/zhansen/");
     }
   }, [location]);
 
