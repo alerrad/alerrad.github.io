@@ -1,0 +1,98 @@
+@import "GlobalVars";
+
+.media-links * {
+  transition: all 0.2s ease-in;
+}
+
+.media-links *:hover {
+  transform: translateY(-5px);
+}
+
+#actions {
+    margin-top: 30px;
+    max-width: 280px;
+
+    button:last-of-type {
+        width: 100px;
+        background-color: $main-color2;
+    }
+
+    button:first-of-type {
+        color: $main-color2;
+    }
+}
+
+#about {
+  .stained-text {
+    max-width: 550px;
+  }
+  img {
+    width: 25%;
+  }
+}
+
+img[alt="hero-img"] {
+    max-width: 23rem;
+}
+
+#media-links {
+  margin: auto;
+  margin-top: 30px;
+  max-width: 200px;
+}
+
+.vertical-timeline-element-content {
+  background-color: #333;
+  color: #fff;
+}
+
+// posts page
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 2rem;
+  place-content: center;
+
+  .mini-post {
+    transition: all .3s;
+    border-radius: 10px;
+    min-height: 100px;
+    padding: 5px;
+
+    .date {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .preview {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+      background-size: cover;
+      margin-bottom: 20px;
+      background-position: center;
+    }
+
+    &:hover {
+      scale: 1.05;
+    }
+  }
+}
+
+// single post page
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+  gap: 2.5rem;
+}
+
+.post-cover {
+  background-position: center;
+  background-size: cover;
+  height: 20rem;
+  margin-bottom: 40px;
+  box-shadow: 0px 3px 30px #232323;
+  border-radius: 10px;
+}

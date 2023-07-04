@@ -1,0 +1,119 @@
+@import "Components";
+@import "GlobalVars";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  background-color: $main-bg;
+}
+
+button {
+  width: 150px;
+  padding: 7px;
+  color: #FFF;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 50px;
+  margin: 7px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 20px;
+  border: 3px $main-color2 solid;
+}
+
+h1, h2, h3 {
+  color: #FFF;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+p {
+  color: #D0E5FF;
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 18px;
+}
+
+.container {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.flex-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+nav {
+  padding: 20px 0;
+}
+
+section {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+footer {
+  padding-top: 55px;
+  padding-bottom: 35px;
+}
+
+#logo {
+  width: 80px;
+}
+
+.stained-text {
+  max-width: 360px;
+}
+
+.purple {
+  color: #8525CF;
+}
+
+.centered {
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+  img[alt="img-from-16-personalities"] {
+    display: none;
+  }
+  .stained-text {
+    max-width: 100%;
+  }
+  #hero .container {
+    flex-direction: column-reverse;
+
+    img {
+      width: 200px;
+      margin-bottom: 30px;
+    }
+  }
+}
