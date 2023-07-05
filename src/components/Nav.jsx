@@ -22,7 +22,7 @@ export default function Nav() {
   return (
     <nav>
       <div className="container flex-box">
-        <Link to={"/"}>
+        <Link to={"/zhansen/"}>
           <img src={logo} alt="Alerrad" id="logo" />
         </Link>
         <Link to={navURL}>
