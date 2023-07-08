@@ -2,7 +2,7 @@ import { GraphQLClient, gql } from "graphql-request";
 import { useEffect, useState } from "react";
 import BlogCard from "../components/BlogCard";
 
-const client = new GraphQLClient(import.meta.env.VITE_APP_GRAPHQL_KEY);
+const client = new GraphQLClient(import.meta.env.VITE_GRAPHQL_KEY);
 const POSTS_QUERY = gql`
   {
     posts {

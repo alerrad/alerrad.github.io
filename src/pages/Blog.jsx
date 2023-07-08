@@ -2,7 +2,7 @@ import { gql, GraphQLClient } from "graphql-request";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const client = new GraphQLClient(import.meta.env.VITE_APP_GRAPHQL_KEY);
+const client = new GraphQLClient(import.meta.env.VITE_GRAPHQL_KEY);
 
 export default function Blog() {
   let params = useParams();
