@@ -14,7 +14,7 @@ body {
 
 button {
   width: 150px;
-  padding: 7px;
+  padding: 9px;
   color: #FFF;
   cursor: pointer;
   background: none;
@@ -24,7 +24,7 @@ button {
   font-size: 18px;
   font-weight: 500;
   margin-top: 20px;
-  border: 3px $main-color2 solid;
+  border: none;
 }
 
 h1, h2, h3 {
@@ -82,7 +82,11 @@ footer {
 }
 
 .purple {
-  color: #8525CF;
+  color: $main-color1;
+}
+
+.pink {
+  color: $main-color2;
 }
 
 .centered {

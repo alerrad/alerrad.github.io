@@ -7,10 +7,16 @@ import "react-vertical-timeline-component/style.min.css";
 import logoIcon from "../assets/img/logo-icon.png";
 import aboutImg from "../assets/img/aboutimg.svg";
 
-
 function TimelineIcon() {
   return (
-    <div style={{background: "#8525CF", width: "100%", height: "100%", borderRadius: "50%"}}></div>
+    <div
+      style={{
+        background: "#8525CF",
+        width: "100%",
+        height: "100%",
+        borderRadius: "50%",
+      }}
+    ></div>
   );
 }
 
@@ -39,16 +45,18 @@ export default function Home() {
             <h3>About me</h3>
             <h1 className="purple">ESTJ-A</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-              esse consectetur voluptates optio natus velit voluptatem, quidem
-              quaerat inventore maiores, architecto vel nam quos repellat id cum
-              explicabo necessitatibus tempore.
+              I am a dedicated, self-taught, confident full-stack web dev &
+              designer. I am experienced with:{" "}
+              <span className="pink">
+                ReactJS, NodeJS, TypeScript, Python, Docker, GraphQL, SQL, shell
+                scripting, Figma, Adobe XD, Postman, WSL, MongoDB, C++, git.
+              </span>{" "}
+              I am currently learning machine learning & cybersecurity.
             </p>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-              esse consectetur voluptates optio natus velit voluptatem, quidem
-              quaerat inventore maiores, architecto vel nam quos repellat id cum
-              explicabo necessitatibus tempore.
+              Beyond the developer world, I am an artist, speedcuber, chess
+              enjoyer, athlete and competitive programming enthusiast. I like
+              meeting new people, exploring and trying out new things.
             </p>
             <img
               style={{ marginTop: "35px", width: "100%" }}
@@ -67,19 +75,30 @@ export default function Home() {
           <VerticalTimeline>
             <VerticalTimelineElement
               date="2017 - 2022"
-              contentStyle={{ background: '#333', color: '#fff', boxShadow: "none" }}
-              contentArrowStyle={{ borderRight: '7px solid  #333' }}
-              icon={<TimelineIcon/>}
+              contentStyle={{
+                background: "#333",
+                color: "#fff",
+                boxShadow: "none",
+              }}
+              contentArrowStyle={{ borderRight: "7px solid  #333" }}
+              icon={<TimelineIcon />}
             >
               <h3>Astana BIL</h3>
               <h5>School olympiads</h5>
-              <p>I started my programming jeorney at school with competetive programming in C++</p>
+              <p>
+                I started my programming jeorney at school with competetive
+                programming in C++
+              </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
               date="2022 Cep. - 2022 Nov."
-              contentStyle={{ background: '#333', color: '#fff', boxShadow: "none" }}
-              contentArrowStyle={{ borderRight: '7px solid  #333' }}
-              icon={<TimelineIcon/>}
+              contentStyle={{
+                background: "#333",
+                color: "#fff",
+                boxShadow: "none",
+              }}
+              contentArrowStyle={{ borderRight: "7px solid  #333" }}
+              icon={<TimelineIcon />}
             >
               <h3>Edlight digital</h3>
               <h5>Web designer</h5>
@@ -87,23 +106,37 @@ export default function Home() {
             </VerticalTimelineElement>
             <VerticalTimelineElement
               date="2022-2025 present"
-              contentStyle={{ background: '#333', color: '#fff', boxShadow: "none" }}
-              contentArrowStyle={{ borderRight: '7px solid  #333' }}
-              icon={<TimelineIcon/>}
+              contentStyle={{
+                background: "#333",
+                color: "#fff",
+                boxShadow: "none",
+              }}
+              contentArrowStyle={{ borderRight: "7px solid  #333" }}
+              icon={<TimelineIcon />}
             >
               <h3>Astana IT University</h3>
               <h5>Cybersecurity bachelor</h5>
-              <p>As a cybersecurity bachelor, I am currently studying ethical hacking, cryptography & improving my development skills</p>
+              <p>
+                As a cybersecurity bachelor, I am currently studying ethical
+                hacking, cryptography & improving my development skills
+              </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
               date="2023, July (Samsung campus Hackathon)"
-              contentStyle={{ background: '#333', color: '#fff', boxShadow: "none" }}
-              contentArrowStyle={{ borderRight: '7px solid  #333' }}
-              icon={<TimelineIcon/>}
+              contentStyle={{
+                background: "#333",
+                color: "#fff",
+                boxShadow: "none",
+              }}
+              contentArrowStyle={{ borderRight: "7px solid  #333" }}
+              icon={<TimelineIcon />}
             >
               <h3>Bilim Jarys</h3>
               <h5>School olympiads platform</h5>
-              <p>Developed and designed front-end on reactJS working with custom REST API</p>
+              <p>
+                Developed and designed front-end on reactJS working with custom
+                REST API
+              </p>
             </VerticalTimelineElement>
           </VerticalTimeline>
         </div>
