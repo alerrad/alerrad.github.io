@@ -31,7 +31,13 @@ export default function Home() {
             </h1>
             <p>Full-stack web dev & designer, from Kazakhstan, Astana</p>
             <div className="flex-box" id="actions">
-              <button>contact</button>
+              <button
+                onClick={() => {
+                  window.scrollTo(0, document.body.scrollHeight);
+                }}
+              >
+                contact
+              </button>
               <button>get CV</button>
             </div>
           </div>

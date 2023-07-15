@@ -8,9 +8,9 @@ import Blogs from "./Blogs";
 export default function Pages() {
   return (
     <Routes>
-      <Route path="/zhansen" element={<Home/>} />
-      <Route path="/zhansen/blog" element={<Blogs/>} />
-      <Route path="/zhansen/blog/:id" element={<Blog/>} />
+      <Route path="/" element={<Home/>} />
+      <Route path="/blog" element={<Blogs/>} />
+      <Route path="/blog/:id" element={<Blog/>} />
     </Routes>
   );
 }

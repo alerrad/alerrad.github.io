@@ -9,12 +9,12 @@ export default function Nav() {
   const [navURL, setNavURL] = useState("");
 
   useEffect(() => {
-    if (location === "/zhansen/") {
+    if (location === "/") {
       setNavLink("Blog");
-      setNavURL("/zhansen/blog");
+      setNavURL("/blog");
     } else {
       setNavLink("Home");
-      setNavURL("/zhansen/");
+      setNavURL("/");
     }
   }, [location]);
 
@@ -22,7 +22,7 @@ export default function Nav() {
   return (
     <nav>
       <div className="container flex-box">
-        <Link to={"/zhansen/"}>
+        <Link to={"/"}>
           <img src={logo} alt="Alerrad" id="logo" />
         </Link>
         <Link to={navURL}>
