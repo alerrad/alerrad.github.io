@@ -10,7 +10,7 @@ export default function Pages() {
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/blog" element={<Blogs/>} />
-      <Route path="/blog/:id" element={<Blog/>} />
+      <Route path="/blog/:slug" element={<Blog/>} />
     </Routes>
   );
 }

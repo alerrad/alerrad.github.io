@@ -14,7 +14,7 @@ export default function Blog() {
   useEffect(() => {
     const postQuery = gql`
     {
-      posts(where: {id: "${params.id}"}) {
+      posts(where: {link: "${params.slug}"}) {
         title
         content {
           html
@@ -38,7 +38,7 @@ export default function Blog() {
       .catch((err) => {
         console.log(err);
       });
-  }, [params.id]);
+  }, [params.slug]);
 
   return (
     <section style={{ padding: "50px 0"}}>

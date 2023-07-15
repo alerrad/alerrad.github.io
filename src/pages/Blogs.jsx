@@ -12,6 +12,7 @@ const POSTS_QUERY = gql`
         url
       }
       date
+      link
     }
   }
 `;
@@ -47,6 +48,7 @@ export default function Blogs() {
                 title={post.title}
                 date={post.date}
                 coverImage={post.coverImage.url}
+                slug={post.link}
               />
             ))}
           </div>
