@@ -1,5 +1,20 @@
 @import "GlobalVars";
 
+// custom scrollbar
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #232323;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $main-color1;
+  border-radius: 10px;
+}
+
 #actions {
     margin-top: 30px;
     max-width: 280px;
