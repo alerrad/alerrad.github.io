@@ -21,7 +21,6 @@ function BlogCard(props) {
 }
 
 BlogCard.propTypes = {
-  id: PropTypes.string,
   title: PropTypes.string,
   coverImage: PropTypes.string,
   date: PropTypes.string,

@@ -44,7 +44,6 @@ export default function Blogs() {
             {posts.map((post) => (
               <BlogCard
                 key={post.id}
-                id={post.id}
                 title={post.title}
                 date={post.date}
                 coverImage={post.coverImage.url}
