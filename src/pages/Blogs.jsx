@@ -1,9 +1,9 @@
 import { GraphQLClient, gql } from "graphql-request";
-import { useEffect, useState } from "react";
+import { useState, useMemo } from "react";
 import BlogCard from "../components/BlogCard";
 
 const client = new GraphQLClient(import.meta.env.VITE_GRAPHQL_KEY);
-const POSTS_QUERY = gql`
+const PostsQuery = gql`
   {
     posts {
       id
@@ -21,9 +21,9 @@ export default function Blogs() {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
+  useMemo(() => {
     client
-      .request(POSTS_QUERY)
+      .request(PostsQuery)
       .then((data) => {
         setPosts(data.posts);
         setIsLoading(false);
