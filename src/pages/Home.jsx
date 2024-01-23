@@ -2,6 +2,7 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
+import { Helmet } from "react-helmet";
 import "react-vertical-timeline-component/style.min.css";
 
 import logoIcon from "../assets/img/logo-icon.png";
@@ -23,6 +24,10 @@ function TimelineIcon() {
 export default function Home() {
   return (
     <main>
+      <Helmet>
+        <title>Alerrad</title>
+        <meta name="description" content="Alerrad - web dev portfolio"/>
+      </Helmet>
       <section id="hero">
         <div className="container flex-box">
           <div className="stained-text">

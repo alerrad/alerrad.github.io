@@ -1,6 +1,7 @@
 import { gql, GraphQLClient } from "graphql-request";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 const client = new GraphQLClient(import.meta.env.VITE_GRAPHQL_KEY);
 
@@ -42,6 +43,10 @@ export default function Blog() {
 
   return (
     <section style={{ padding: "50px 0"}}>
+      <Helmet>
+        <title>Alerrad - {title}</title>
+        <meta name="description" content={content}/>
+      </Helmet>
       <div className="container">
         <div className="post-grid">
           <div

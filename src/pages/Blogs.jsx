@@ -1,5 +1,6 @@
 import { GraphQLClient, gql } from "graphql-request";
 import { useState, useMemo } from "react";
+import { Helmet } from "react-helmet";
 import BlogCard from "../components/BlogCard";
 
 const client = new GraphQLClient(import.meta.env.VITE_GRAPHQL_KEY);
@@ -36,6 +37,10 @@ export default function Blogs() {
 
   return (
     <section>
+      <Helmet>
+        <title>Alerrad - blog</title>
+        <meta name="description" content="Alerrad's blogs & posts"/>
+      </Helmet>
       <div className="container">
         {isLoading ? (
           <h1 className="centered">Loading ...</h1>
