@@ -36,7 +36,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <p>&copy; Copyright Alerrad, 2023</p>
+        <p>&copy; Copyright Alerrad, 2024</p>
       </div>
     </footer>
   );
