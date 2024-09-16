@@ -19,13 +19,13 @@
     margin-top: 30px;
     max-width: 280px;
 
-    button:last-of-type {
-        width: 100px;
-        background-color: $main-color1;
+    .btn1 {
+      background-color: $main-color1;
     }
 
-    button:first-of-type {
-        background: $main-color2;
+    .btn2 button {
+      width: 110px;
+      background: $main-color2;
     }
 }
 
