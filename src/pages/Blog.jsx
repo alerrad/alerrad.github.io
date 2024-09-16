@@ -23,6 +23,7 @@ export default function Blog() {
       })
       .catch((err) => {
         console.log(err);
+        window.location.href = "#/blog";
       });
   }, [params.slug]);
 

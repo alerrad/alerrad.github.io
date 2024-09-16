@@ -26,6 +26,11 @@ button {
   font-weight: 500;
   margin-top: 20px;
   border: none;
+
+  &.purple {
+    background-color: $main-color1;
+    color: #fff;
+  }
 }
 
 h1, h2, h3 {
@@ -58,6 +63,10 @@ a {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.big-text {
+  font-size: 60px;
 }
 
 nav {
