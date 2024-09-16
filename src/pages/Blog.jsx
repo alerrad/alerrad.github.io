@@ -1,9 +1,8 @@
-import { gql, GraphQLClient } from "graphql-request";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-
-const client = new GraphQLClient(import.meta.env.VITE_GRAPHQL_KEY);
+import { client } from "../gql";
+import { postQuery } from "../gql/requests";
 
 export default function Blog() {
   let params = useParams();
@@ -13,24 +12,10 @@ export default function Blog() {
   const [date, setDate] = useState("");
 
   useEffect(() => {
-    const postQuery = gql`
-    {
-      posts(where: {link: "${params.slug}"}) {
-        title
-        content {
-          html
-        }
-        coverImage {
-          url
-        }
-        date
-      }
-    }`;
-
     client
-      .request(postQuery)
+      .request(postQuery(params.slug))
       .then((data) => {
-        const post = data.posts[0];
+        const post = data.post;
         setImageURL(post.coverImage.url);
         setTitle(post.title);
         setContent(post.content.html);

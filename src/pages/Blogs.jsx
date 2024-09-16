@@ -1,22 +1,8 @@
-import { GraphQLClient, gql } from "graphql-request";
 import { useState, useMemo } from "react";
 import { Helmet } from "react-helmet";
+import { client } from "../gql";
+import { postsQuery } from "../gql/requests";
 import BlogCard from "../components/BlogCard";
-
-const client = new GraphQLClient(import.meta.env.VITE_GRAPHQL_KEY);
-const PostsQuery = gql`
-  {
-    posts {
-      id
-      title
-      coverImage {
-        url
-      }
-      date
-      link
-    }
-  }
-`;
 
 export default function Blogs() {
   const [posts, setPosts] = useState([]);
@@ -24,7 +10,7 @@ export default function Blogs() {
 
   useMemo(() => {
     client
-      .request(PostsQuery)
+      .request(postsQuery)
       .then((data) => {
         setPosts(data.posts);
         setIsLoading(false);

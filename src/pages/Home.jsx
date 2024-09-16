@@ -1,32 +1,37 @@
 import {
   VerticalTimeline,
-  VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { Helmet } from "react-helmet";
 import "react-vertical-timeline-component/style.min.css";
+import { useState, useMemo } from "react";
+
+import { client } from "../gql/index";
+import { timelineExpsQuery } from "../gql/requests";
+import TimelineCard from "../components/TimelineCard";
 
 import logoIcon from "../assets/img/logo-icon.png";
 import aboutImg from "../assets/img/aboutimg.svg";
 
-function TimelineIcon() {
-  return (
-    <div
-      style={{
-        background: "#8525CF",
-        width: "100%",
-        height: "100%",
-        borderRadius: "50%",
-      }}
-    ></div>
-  );
-}
 
 export default function Home() {
+  const [timelineExps, setTimelineExps] = useState([]);
+
+  useMemo(() => {
+    client
+      .request(timelineExpsQuery)
+      .then(data => {
+        setTimelineExps(data.timelineExps);
+      }).catch(err => {
+        console.log(err);
+        alert("Could not get timeline data :(");
+      });
+  }, []);
+
   return (
     <main>
       <Helmet>
         <title>Alerrad</title>
-        <meta name="description" content="Alerrad - web dev portfolio"/>
+        <meta name="description" content="Alerrad - web dev portfolio" />
       </Helmet>
       <section id="hero">
         <div className="container flex-box">
@@ -37,13 +42,16 @@ export default function Home() {
             <p>Full-stack web dev & designer, from Kazakhstan, Astana</p>
             <div className="flex-box" id="actions">
               <button
+                className="btn1"
                 onClick={() => {
                   window.scrollTo(0, document.body.scrollHeight);
                 }}
               >
-                contact
+                Contact
               </button>
-              <button>get CV</button>
+              <a href="https://read.cv/alerrad" className="btn2" target="_blank" rel="noreferrer">
+                <button>Get CV</button>
+              </a>
             </div>
           </div>
           <img src={logoIcon} alt="hero-img" />
@@ -79,76 +87,20 @@ export default function Home() {
       </section>
       <section>
         <div className="container">
-          <h3 className="centered">My undeniable</h3>
+          <h3 className="centered">My modest</h3>
           <h1 className="centered purple" style={{ marginBottom: 50 }}>
             Experience
           </h1>
           <VerticalTimeline>
-            <VerticalTimelineElement
-              date="2017 - 2022"
-              contentStyle={{
-                background: "#333",
-                color: "#fff",
-                boxShadow: "none",
-              }}
-              contentArrowStyle={{ borderRight: "7px solid  #333" }}
-              icon={<TimelineIcon />}
-            >
-              <h3>Astana BIL</h3>
-              <h5>School olympiads</h5>
-              <p>
-                I started my programming jeorney at school with competetive
-                programming in C++
-              </p>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              date="2022 Cep. - 2022 Nov."
-              contentStyle={{
-                background: "#333",
-                color: "#fff",
-                boxShadow: "none",
-              }}
-              contentArrowStyle={{ borderRight: "7px solid  #333" }}
-              icon={<TimelineIcon />}
-            >
-              <h3>Edlight digital</h3>
-              <h5>Web designer</h5>
-              <p>Developed responsive web page designs</p>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              date="2022-2025 present"
-              contentStyle={{
-                background: "#333",
-                color: "#fff",
-                boxShadow: "none",
-              }}
-              contentArrowStyle={{ borderRight: "7px solid  #333" }}
-              icon={<TimelineIcon />}
-            >
-              <h3>Astana IT University</h3>
-              <h5>Cybersecurity bachelor</h5>
-              <p>
-                As a cybersecurity bachelor, I am currently studying ethical
-                hacking, cryptography & improving my development skills
-              </p>
-            </VerticalTimelineElement>
-            <VerticalTimelineElement
-              date="2023, July (Samsung campus Hackathon)"
-              contentStyle={{
-                background: "#333",
-                color: "#fff",
-                boxShadow: "none",
-              }}
-              contentArrowStyle={{ borderRight: "7px solid  #333" }}
-              icon={<TimelineIcon />}
-            >
-              <h3>Bilim Jarys</h3>
-              <h5>School olympiads platform</h5>
-              <p>
-                Developed and designed front-end on reactJS working with custom
-                REST API
-              </p>
-            </VerticalTimelineElement>
+            {timelineExps.map(timelineExp => (
+              <TimelineCard
+                key={timelineExp.id}
+                title={timelineExp.title}
+                subtitle={timelineExp.subtitle}
+                timestamp={timelineExp.timestamp}
+                desc={timelineExp.desc}
+              />
+            ))}
           </VerticalTimeline>
         </div>
       </section>
